@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rehanul Islam - People Operations Executive HR. Expert in HR Operations, Process Automation, Recruitment Coordination & Employee Engagement.">
+<meta name="keywords" content="HR, People Operations, Recruitment, Bangladesh, DataPath, Rehanul Islam">
+<title>Rehanul Islam | People Operations Executive - HR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg2: #111118;
+    --bg3: #16161f;
+    --card: #1a1a26;
+    --border: rgba(255,255,255,0.07);
+    --accent: #c8a96e;
+    --accent2: #e8c98e;
+    --text: #f0ede8;
+    --muted: #8a8a9a;
+    --soft: #d4d0cc;
+    --glow: rgba(200,169,110,0.15);
+  }
+  [data-theme="light"] {
+    --bg: #faf8f5;
+    --bg2: #f2efe9;
+    --bg3: #ece8e0;
+    --card: #ffffff;
+    --border: rgba(0,0,0,0.08);
+    --accent: #8b6914;
+    --accent2: #a07820;
+    --text: #1a1a2e;
+    --muted: #6a6a7a;
+    --soft: #4a4a5a;
+    --glow: rgba(139,105,20,0.1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+    transition: background 0.4s, color 0.4s;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    padding: 18px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    backdrop-filter: blur(20px);
+    background: rgba(10,10,15,0.7);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+  [data-theme="light"] nav { background: rgba(250,248,245,0.85); }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 700;
+    color: var(--accent); letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none;
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-right { display: flex; align-items: center; gap: 16px; }
+
+  .theme-btn {
+    background: var(--card); border: 1px solid var(--border);
+    color: var(--text); padding: 8px 16px; border-radius: 20px;
+    cursor: pointer; font-size: 0.8rem; transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .theme-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 2px; background: var(--text); transition: all 0.3s; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 120px 40px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.4;
+  }
+  .hero-glow {
+    position: absolute; top: -200px; right: -100px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    color: var(--accent); font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow::before {
+    content: ''; width: 40px; height: 1px; background: var(--accent);
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 900; line-height: 1.05;
+    color: var(--text); margin-bottom: 8px;
+  }
+  .hero-name span { color: var(--accent); }
+  .hero-typed {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    color: var(--muted); font-weight: 300;
+    margin-bottom: 28px; min-height: 2em;
+  }
+  .typing-cursor { color: var(--accent); animation: blink 1s infinite; }
+  @keyframes blink { 0%,100%{opacity:1}50%{opacity:0} }
+  .hero-desc {
+    max-width: 560px; color: var(--soft);
+    font-size: 1rem; line-height: 1.8; margin-bottom: 40px;
+  }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    padding: 14px 32px; background: var(--accent); color: #0a0a0f;
+    border-radius: 4px; text-decoration: none; font-weight: 600;
+    font-size: 0.9rem; letter-spacing: 0.04em;
+    transition: all 0.25s; border: 2px solid var(--accent);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: transparent; color: var(--accent); transform: translateY(-2px); }
+  .btn-outline {
+    padding: 14px 32px; background: transparent; color: var(--text);
+    border-radius: 4px; text-decoration: none; font-weight: 500;
+    font-size: 0.9rem; border: 1px solid var(--border);
+    transition: all 0.25s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+  .hero-stats {
+    display: flex; gap: 48px; margin-top: 64px;
+    padding-top: 40px; border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .stat-item { text-align: left; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 700; color: var(--accent);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.06em; margin-top: 4px; }
+
+  /* SECTIONS */
+  section { padding: 100px 40px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    color: var(--accent); font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+  }
+  .section-label::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--accent); }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+    color: var(--text); margin-bottom: 48px; line-height: 1.2;
+  }
+
+  /* ABOUT */
+  #about { background: var(--bg2); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .about-visual {
+    position: relative; aspect-ratio: 3/4; max-width: 380px;
+  }
+  .about-img-frame {
+    width: 100%; height: 100%; background: var(--card);
+    border: 1px solid var(--border); border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; position: relative;
+  }
+  .about-initials {
+    font-family: 'Playfair Display', serif; font-size: 6rem;
+    font-weight: 900; color: var(--accent); opacity: 0.15;
+    position: absolute;
+  }
+  .about-badge {
+    position: absolute; bottom: -16px; right: -16px;
+    background: var(--accent); color: #0a0a0f;
+    padding: 16px 20px; border-radius: 4px; font-weight: 700;
+    text-align: center; font-size: 0.9rem;
+  }
+  .about-badge strong { display: block; font-family: 'Playfair Display', serif; font-size: 2rem; }
+  .about-content p { color: var(--soft); margin-bottom: 20px; line-height: 1.9; }
+  .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .tag {
+    padding: 6px 16px; border: 1px solid var(--border);
+    border-radius: 20px; font-size: 0.8rem; color: var(--muted);
+    transition: all 0.2s;
+  }
+  .tag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .skill-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px;
+    transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .skill-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 3px; height: 0; background: var(--accent);
+    transition: height 0.4s;
+  }
+  .skill-card:hover::before { height: 100%; }
+  .skill-card:hover { border-color: rgba(200,169,110,0.3); transform: translateY(-4px); }
+  .skill-icon { font-size: 2rem; margin-bottom: 16px; }
+  .skill-title { font-weight: 600; font-size: 1rem; margin-bottom: 12px; color: var(--text); }
+  .skill-items { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-pill {
+    padding: 4px 12px; background: var(--bg3);
+    border-radius: 3px; font-size: 0.78rem; color: var(--muted);
+  }
+
+  /* EXPERIENCE */
+  #experience { background: var(--bg2); }
+  .timeline { position: relative; }
+  .timeline::before {
+    content: ''; position: absolute; left: 140px; top: 0; bottom: 0;
+    width: 1px; background: var(--border);
+  }
+  .timeline-item {
+    display: grid; grid-template-columns: 140px 1fr;
+    gap: 40px; margin-bottom: 48px; position: relative;
+  }
+  .timeline-date {
+    text-align: right; padding-top: 4px;
+    color: var(--accent); font-size: 0.82rem; font-weight: 600;
+    line-height: 1.5;
+  }
+  .timeline-dot {
+    position: absolute; left: 132px; top: 8px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--bg); border: 2px solid var(--accent);
+    z-index: 1;
+  }
+  .timeline-content {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px;
+    transition: border-color 0.3s;
+  }
+  .timeline-content:hover { border-color: rgba(200,169,110,0.4); }
+  .timeline-role { font-weight: 700; font-size: 1.05rem; margin-bottom: 4px; color: var(--text); }
+  .timeline-company {
+    color: var(--accent); font-size: 0.9rem; font-weight: 600; margin-bottom: 16px;
+  }
+  .timeline-list { list-style: none; }
+  .timeline-list li {
+    padding: 6px 0; color: var(--soft); font-size: 0.9rem;
+    padding-left: 20px; position: relative;
+  }
+  .timeline-list li::before {
+    content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.8rem;
+  }
+
+  /* CERTIFICATIONS */
+  .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+  .cert-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 24px;
+    transition: all 0.3s; display: flex; flex-direction: column; gap: 12px;
+  }
+  .cert-card:hover { border-color: rgba(200,169,110,0.4); transform: translateY(-3px); }
+  .cert-icon { font-size: 1.5rem; }
+  .cert-name { font-weight: 600; font-size: 0.92rem; color: var(--text); line-height: 1.4; }
+  .cert-issuer { font-size: 0.8rem; color: var(--muted); }
+  .cert-date { font-size: 0.78rem; color: var(--accent); font-weight: 600; }
+  .cert-skill { font-size: 0.75rem; color: var(--muted); background: var(--bg3); padding: 3px 10px; border-radius: 3px; align-self: flex-start; }
+
+  /* SERVICES */
+  #services { background: var(--bg2); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+  .service-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 36px 28px;
+    transition: all 0.3s; position: relative;
+  }
+  .service-card:hover { border-color: rgba(200,169,110,0.4); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+  .service-num {
+    font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 900;
+    color: var(--accent); opacity: 0.12; position: absolute; top: 20px; right: 24px; line-height: 1;
+  }
+  .service-icon { font-size: 2rem; margin-bottom: 16px; }
+  .service-title { font-weight: 700; font-size: 1.1rem; margin-bottom: 12px; }
+  .service-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+  .contact-info h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  .contact-info p { color: var(--soft); margin-bottom: 32px; line-height: 1.8; }
+  .contact-item {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 20px; color: var(--soft); font-size: 0.95rem;
+  }
+  .contact-item-icon {
+    width: 44px; height: 44px; border-radius: 8px;
+    background: var(--card); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+  }
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-group label { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; color: var(--muted); text-transform: uppercase; }
+  .form-group input, .form-group textarea {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 6px; padding: 14px 18px; color: var(--text);
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
+    transition: border-color 0.2s; outline: none;
+    resize: none;
+  }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+  .form-group textarea { min-height: 120px; }
+  .social-links { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+  .social-link {
+    padding: 10px 20px; background: var(--card);
+    border: 1px solid var(--border); border-radius: 4px;
+    color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500;
+    transition: all 0.2s; display: flex; align-items: center; gap: 8px;
+  }
+  .social-link:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* RESUME SECTION */
+  #resume {
+    text-align: center; background: var(--bg2);
+  }
+  .resume-inner {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 64px; max-width: 700px; margin: 0 auto;
+    position: relative; overflow: hidden;
+  }
+  .resume-inner::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+  }
+  .resume-emoji { font-size: 3rem; margin-bottom: 20px; }
+  .resume-inner h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 12px; }
+  .resume-inner p { color: var(--muted); margin-bottom: 32px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    padding: 40px;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; color: var(--accent); margin-bottom: 16px;
+  }
+  .footer-copy { color: var(--muted); font-size: 0.85rem; }
+
+  /* MOBILE NAV */
+  .mobile-menu {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--bg); z-index: 999; flex-direction: column;
+    align-items: center; justify-content: center; gap: 32px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 1.5rem; color: var(--text); text-decoration: none; font-family: 'Playfair Display', serif; }
+  .mobile-close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+
+  /* ANIMATIONS */
+  .fade-in { opacity: 0; transform: translateY(24px); transition: all 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* NOTIFICATION */
+  .notif {
+    position: fixed; bottom: 32px; right: 32px; z-index: 9999;
+    background: var(--accent); color: #0a0a0f;
+    padding: 16px 24px; border-radius: 8px; font-weight: 600; font-size: 0.9rem;
+    transform: translateY(80px); opacity: 0; transition: all 0.4s;
+  }
+  .notif.show { transform: translateY(0); opacity: 1; }
+
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    section { padding: 80px 24px; }
+    #hero { padding: 100px 24px 60px; }
+    .hero-stats { gap: 28px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-visual { display: none; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .timeline::before { left: 0; }
+    .timeline-item { grid-template-columns: 1fr; gap: 16px; }
+    .timeline-date { text-align: left; }
+    .timeline-dot { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="logo">RI.</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-btn" id="themeToggle">☀ Light</button>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#certifications" onclick="closeMobile()">Certifications</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Available for Opportunities</div>
+    <h1 class="hero-name">Rehanul<br><span>Islam</span></h1>
+    <p class="hero-typed" id="typedText"><span class="typing-cursor">|</span></p>
+    <p class="hero-desc">
+      People Operations Executive at DataPath Ltd., passionate about building efficient HR systems, 
+      automating workflows, and creating exceptional employee experiences across the full HR lifecycle.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">✉ Get In Touch</a>
+      <a href="#experience" class="btn-outline">⚡ View Experience</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Certifications</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">158</div>
+        <div class="stat-label">Connections</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Roles Held</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid fade-in">
+      <div class="about-visual">
+        <div class="about-img-frame">
+          <span class="about-initials">RI</span>
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,169,110,0.05),transparent);border-radius:4px;"></div>
+          <div style="position:relative;z-index:2;text-align:center;padding:20px;">
+            <div style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:2.5rem;">👨‍💼</div>
+            <div style="font-weight:700;font-size:1.1rem;color:var(--text);">Rehanul Islam</div>
+            <div style="color:var(--accent);font-size:0.85rem;margin-top:4px;">People Ops Executive</div>
+          </div>
+        </div>
+        <div class="about-badge">
+          <strong>3+</strong>Years in HR
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">Who I Am</div>
+        <h2 class="section-title" style="margin-bottom:24px;">HR Professional<br>& Operations Expert</h2>
+        <p>
+          I'm Rehanul Islam — a People Operations Executive at DataPath Ltd. with over 3 years of 
+          progressive HR experience. I specialize in building end-to-end HR systems, driving process 
+          automation, and supporting recruitment and employee engagement initiatives.
+        </p>
+        <p>
+          Graduated with a BBA in HRM from Green University of Bangladesh (CGPA 3.12), I combine 
+          academic knowledge with hands-on operational expertise. My career journey at DataPath spans 
+          from HR Intern to Executive, reflecting consistent performance and growth.
+        </p>
+        <p>
+          I'm passionate about leveraging technology to streamline HR workflows — from scoresheet 
+          automation and tracking systems to administrative improvements that reduce manual workload 
+          and improve organizational efficiency.
+        </p>
+        <div class="about-tags">
+          <span class="tag">HR Operations</span>
+          <span class="tag">Process Automation</span>
+          <span class="tag">Recruitment</span>
+          <span class="tag">Employee Engagement</span>
+          <span class="tag">HRIS</span>
+          <span class="tag">Data Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label fade-in">Expertise</div>
+    <h2 class="section-title fade-in">Core Skills &<br>Competencies</h2>
+    <div class="skills-grid">
+      <div class="skill-card fade-in">
+        <div class="skill-icon">🏢</div>
+        <div class="skill-title">HR Operations</div>
+        <div class="skill-items">
+          <span class="skill-pill">Payroll Support</span>
+          <span class="skill-pill">Employee Records</span>
+          <span class="skill-pill">Compliance</span>
+          <span class="skill-pill">Documentation</span>
+          <span class="skill-pill">Clearance Process</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">🎯</div>
+        <div class="skill-title">Recruitment & Talent</div>
+        <div class="skill-items">
+          <span class="skill-pill">Recruitment Coordination</span>
+          <span class="skill-pill">Candidate Experience</span>
+          <span class="skill-pill">Pre-interview Process</span>
+          <span class="skill-pill">Talent Retention</span>
+          <span class="skill-pill">Job Posting</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">⚙️</div>
+        <div class="skill-title">Process Automation</div>
+        <div class="skill-items">
+          <span class="skill-pill">Google Sheets</span>
+          <span class="skill-pill">Workflow Automation</span>
+          <span class="skill-pill">Data Tracking</span>
+          <span class="skill-pill">Score Sheet Automation</span>
+          <span class="skill-pill">Microsoft Office</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">👥</div>
+        <div class="skill-title">People & Engagement</div>
+        <div class="skill-items">
+          <span class="skill-pill">Employee Engagement</span>
+          <span class="skill-pill">Office Programs</span>
+          <span class="skill-pill">Cross-functional Coordination</span>
+          <span class="skill-pill">Transport Coordination</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">🖥️</div>
+        <div class="skill-title">HRIS & Tech</div>
+        <div class="skill-items">
+          <span class="skill-pill">HRIS Systems</span>
+          <span class="skill-pill">HR System Selection</span>
+          <span class="skill-pill">Benefits Administration</span>
+          <span class="skill-pill">Performance Management</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">🗣️</div>
+        <div class="skill-title">Soft Skills</div>
+        <div class="skill-items">
+          <span class="skill-pill">Strategic Communication</span>
+          <span class="skill-pill">Time Management</span>
+          <span class="skill-pill">Analytical Thinking</span>
+          <span class="skill-pill">Negotiation</span>
+          <span class="skill-pill">Problem Solving</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label fade-in">Career Journey</div>
+    <h2 class="section-title fade-in">Work Experience</h2>
+    <div class="timeline">
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-date">Jul 2025<br>— Present</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-role">People Operations Executive – HR</div>
+          <div class="timeline-company">DataPath Ltd. · Full-time · On-site · Basundhara, Dhaka</div>
+          <ul class="timeline-list">
+            <li>Manage end-to-end HR and people operations including recruitment support, employee documentation, clearance processes, transport coordination, and office administration</li>
+            <li>Drive operational efficiency by improving workflows, maintaining accurate reporting, and supporting day-to-day administrative and compliance related processes</li>
+            <li>Lead and contribute to automation and process improvement initiatives, including tracking systems, recruitment data management, scoresheet automation, and administrative workflow enhancements</li>
+            <li>Support office programs, employee engagement activities, and cross functional coordination while contributing to continuous improvement across HR operations</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-date">Jun 2025<br>— Jun 2025</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-role">Executive Officer – HR</div>
+          <div class="timeline-company">DataPath Ltd. · Full-time · Basundhara, Dhaka</div>
+          <ul class="timeline-list">
+            <li>Managed HR consulting tasks and time management coordination</li>
+            <li>Bridged the transition from Trainee to full Executive role</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-date">Dec 2024<br>— Jun 2025</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-role">Trainee Executive – HR</div>
+          <div class="timeline-company">DataPath Ltd. · Full-time · On-site · Basundhara, Dhaka</div>
+          <ul class="timeline-list">
+            <li>Maintained and updated employee records and contracts</li>
+            <li>Oversee general office operations and ensure smooth administrative workflows</li>
+            <li>Managed office supplies, maintenance, equipment, and vendor relationships</li>
+            <li>Supported recruitment coordination and pre-interview processes</li>
+            <li>Coordinate facility management, including cleanliness, repairs, and security</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-date">Sep 2024<br>— Dec 2024</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-role">Human Resources Intern</div>
+          <div class="timeline-company">DataPath Ltd. · Internship · On-site · Basundhara, Dhaka</div>
+          <ul class="timeline-list">
+            <li>Supported core HR operations by coordinating recruitment activities</li>
+            <li>Maintained employee records and assisted with administrative tasks</li>
+            <li>Developed analytical, negotiation, and HR foundations skills</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- OTHER EXPERIENCE DIVIDER -->
+    <div class="fade-in" style="margin-top:64px;">
+      <div style="display:flex;align-items:center;gap:20px;margin-bottom:32px;">
+        <div style="flex:1;height:1px;background:var(--border);"></div>
+        <div style="display:flex;align-items:center;gap:10px;white-space:nowrap;">
+          <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);">Other Experience</span>
+          <span style="font-size:0.72rem;color:var(--muted);opacity:0.6;">— Prior to HR career</span>
+        </div>
+        <div style="flex:1;height:1px;background:var(--border);"></div>
+      </div>
+
+      <div style="position:relative;">
+        <div style="position:absolute;left:140px;top:0;bottom:0;width:1px;background:var(--border);opacity:0.5;"></div>
+        <div class="timeline-item">
+          <div class="timeline-date" style="color:var(--muted);">Sep 2022<br>— Oct 2023</div>
+          <div class="timeline-dot" style="border-color:var(--muted);"></div>
+          <div class="timeline-content" style="opacity:0.75;">
+            <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:10px;">
+              <span style="font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:var(--bg3);color:var(--muted);padding:3px 10px;border-radius:3px;">Non-HR Role</span>
+            </div>
+            <div class="timeline-role">Customer Service Officer</div>
+            <div class="timeline-company" style="color:var(--muted);">Genex Infosys Limited · Full-time · Nikunja, Airport Road, Dhaka</div>
+            <ul class="timeline-list">
+              <li>Provided customer service and managed communications professionally</li>
+              <li>Handled data entry and administrative tasks efficiently</li>
+              <li>Built strong typing, communication, and customer engagement skills</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <div class="section-label fade-in">LinkedIn Learning</div>
+    <h2 class="section-title fade-in">Licenses &<br>Certifications</h2>
+    <div class="certs-grid">
+      <div class="cert-card fade-in">
+        <div class="cert-icon">🏅</div>
+        <div class="cert-name">HRCI Professional in Human Resources (PHR) Cert Prep</div>
+        <div class="cert-issuer">LinkedIn</div>
+        <div class="cert-date">Issued Apr 2026</div>
+        <div class="cert-skill">Human Resources (HR), HR Management</div>
+      </div>
+      <div class="cert-card fade-in">
+        <div class="cert-icon">📊</div>
+        <div class="cert-name">Foundations of Performance Management</div>
+        <div class="cert-issuer">LinkedIn</div>
+        <div class="cert-date">Issued Apr 2026</div>
+        <div class="cert-skill">Performance Management</div>
+      </div>
+      <div class="cert-card fade-in">
+        <div class="cert-icon">🎤</div>
+        <div class="cert-name">Skills-First Interviewing</div>
+        <div class="cert-issuer">LinkedIn</div>
+        <div class="cert-date">Issued Apr 2026</div>
+        <div class="cert-skill">Competency Based Interviewing</div>
+      </div>
+      <div class="cert-card fade-in">
+        <div class="cert-icon">🖥️</div>
+        <div class="cert-name">Human Resources: Selecting an HR System</div>
+        <div class="cert-issuer">LinkedIn</div>
+        <div class="cert-date">Issued Apr 2026</div>
+        <div class="cert-skill">Human Resources Information Systems (HRIS)</div>
+      </div>
+      <div class="cert-card fade-in">
+        <div class="cert-icon">⭐</div>
+        <div class="cert-name">Creating a Great Candidate Experience</div>
+        <div class="cert-issuer">LinkedIn</div>
+        <div class="cert-date">Issued Apr 2026</div>
+        <div class="cert-skill">Hiring Practices</div>
+      </div>
+      <div class="cert-card fade-in">
+        <div class="cert-icon">🔍</div>
+        <div class="cert-name">Recruiting Foundations</div>
+        <div class="cert-issuer">LinkedIn</div>
+        <div class="cert-date">Issued Apr 2026</div>
+        <div class="cert-skill">Recruiting</div>
+      </div>
+      <div class="cert-card fade-in">
+        <div class="cert-icon">📣</div>
+        <div class="cert-name">HR Recruiting Communication Strategies to Attract and Retain Top Talent</div>
+        <div class="cert-issuer">LinkedIn</div>
+        <div class="cert-date">Issued Apr 2026</div>
+        <div class="cert-skill">Strategic Communications</div>
+      </div>
+      <div class="cert-card fade-in">
+        <div class="cert-icon">🔄</div>
+        <div class="cert-name">HR Foundations: Redefining HR</div>
+        <div class="cert-issuer">LinkedIn</div>
+        <div class="cert-date">Issued Apr 2026</div>
+        <div class="cert-skill">HR Transformation</div>
+      </div>
+      <div class="cert-card fade-in">
+        <div class="cert-icon">💡</div>
+        <div class="cert-name">Retain Your Talent with These Six Tips</div>
+        <div class="cert-issuer">LinkedIn</div>
+        <div class="cert-date">Issued Apr 2026</div>
+        <div class="cert-skill">Talent Management</div>
+      </div>
+      <div class="cert-card fade-in">
+        <div class="cert-icon">🗂️</div>
+        <div class="cert-name">Human Resources: Understanding HR Systems Features and Benefits</div>
+        <div class="cert-issuer">LinkedIn</div>
+        <div class="cert-date">Issued Apr 2026</div>
+        <div class="cert-skill">Benefits Administration, HRIS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-label fade-in">What I Offer</div>
+    <h2 class="section-title fade-in">Services</h2>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-num">01</div>
+        <div class="service-icon">🎯</div>
+        <div class="service-title">Recruitment Coordination</div>
+        <div class="service-desc">End-to-end recruitment support from job posting, candidate screening, pre-interview coordination to onboarding — ensuring an exceptional candidate experience throughout.</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-num">02</div>
+        <div class="service-icon">⚙️</div>
+        <div class="service-title">HR Process Automation</div>
+        <div class="service-desc">Design and implement workflow automations using Google Sheets and other tools to reduce manual work, improve accuracy, and streamline tracking systems and scoresheet processes.</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-num">03</div>
+        <div class="service-icon">📋</div>
+        <div class="service-title">HR Operations Management</div>
+        <div class="service-desc">Comprehensive HR operations support including employee documentation, records management, compliance reporting, clearance processes, and administrative coordination.</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-num">04</div>
+        <div class="service-icon">👥</div>
+        <div class="service-title">Employee Engagement</div>
+        <div class="service-desc">Plan and execute employee engagement programs, office events, and culture-building activities that foster a positive work environment and improve employee retention.</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-num">05</div>
+        <div class="service-icon">🖥️</div>
+        <div class="service-title">HRIS Implementation Support</div>
+        <div class="service-desc">Assist in evaluating, selecting, and implementing HR Information Systems. Configure systems, manage data migration, and train teams on effective platform use.</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-num">06</div>
+        <div class="service-icon">📈</div>
+        <div class="service-title">HR Consulting & Advisory</div>
+        <div class="service-desc">Strategic HR consulting for organizations looking to improve their people operations, optimize administrative workflows, and align HR practices with business goals.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume">
+  <div class="container">
+    <div class="resume-inner fade-in">
+      <div class="resume-emoji">📄</div>
+      <h3>Download My Resume</h3>
+      <p>Get a comprehensive overview of my experience, education, skills, and certifications in a clean, professional format.</p>
+      <a href="mailto:rehanulislam00@gmail.com?subject=Resume Request" class="btn-primary" style="display:inline-flex;">
+        📩 Request Resume
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label fade-in">Let's Connect</div>
+    <h2 class="section-title fade-in">Get In Touch</h2>
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <h3>Open to Opportunities</h3>
+        <p>I'm currently open to new opportunities in HR operations, people management, and related roles. Whether you have a question, project, or just want to connect — feel free to reach out!</p>
+        <div class="contact-item">
+          <div class="contact-item-icon">📧</div>
+          <a href="mailto:rehanulislam00@gmail.com" style="color:var(--soft);text-decoration:none;">rehanulislam00@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📱</div>
+          <a href="tel:+8801571229976" style="color:var(--soft);text-decoration:none;">+880 1571-229976</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <span>Amtola, Khilkhet, Dhaka 1229, Bangladesh</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">💼</div>
+          <span>Open to: On-site · Hybrid · Remote</span>
+        </div>
+        <div class="social-links">
+          <a href="https://linkedin.com/in/rehanulislam" target="_blank" class="social-link">
+            <span>in</span> LinkedIn
+          </a>
+          <a href="mailto:rehanulislam00@gmail.com" class="social-link">
+            ✉ Email Me
+          </a>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="formName" placeholder="John Doe" />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="formEmail" placeholder="john@example.com" />
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" id="formSubject" placeholder="Job Opportunity / Collaboration" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="formMsg" placeholder="Tell me about the opportunity or how I can help..."></textarea>
+          </div>
+          <button class="btn-primary" onclick="sendMessage()" style="border:none;cursor:pointer;font-family:'DM Sans',sans-serif;">
+            ✉ Send Message
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Rehanul Islam</div>
+  <p style="color:var(--muted);font-size:0.82rem;margin-bottom:8px;">People Operations Executive – HR · DataPath Ltd. · Dhaka, Bangladesh</p>
+  <p class="footer-copy">© 2026 Rehanul Islam. All rights reserved.</p>
+</footer>
+
+<div class="notif" id="notif">✅ Message copied! Opening email client...</div>
+
+<script>
+// TYPING EFFECT
+const phrases = [
+  'People Operations Executive – HR',
+  'HR Operations Specialist',
+  'Process Automation Enthusiast',
+  'Recruitment Coordination Expert',
+  'Employee Engagement Champion'
+];
+let pi = 0, ci = 0, del = false;
+const el = document.getElementById('typedText');
+function type() {
+  const p = phrases[pi];
+  if (!del) {
+    el.innerHTML = p.slice(0, ++ci) + '<span class="typing-cursor">|</span>';
+    if (ci === p.length) { del = true; setTimeout(type, 2000); return; }
+  } else {
+    el.innerHTML = p.slice(0, --ci) + '<span class="typing-cursor">|</span>';
+    if (ci === 0) { del = false; pi = (pi + 1) % phrases.length; }
+  }
+  setTimeout(type, del ? 40 : 70);
+}
+type();
+
+// THEME
+const themeBtn = document.getElementById('themeToggle');
+const html = document.documentElement;
+themeBtn.addEventListener('click', () => {
+  const isLight = html.getAttribute('data-theme') === 'light';
+  html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+  themeBtn.textContent = isLight ? '☀ Light' : '🌙 Dark';
+});
+
+// HAMBURGER
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.add('open');
+});
+document.getElementById('mobileClose').addEventListener('click', closeMobile);
+function closeMobile() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// SCROLL FADE
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+// CONTACT FORM
+function sendMessage() {
+  const name = document.getElementById('formName').value;
+  const email = document.getElementById('formEmail').value;
+  const subject = document.getElementById('formSubject').value;
+  const msg = document.getElementById('formMsg').value;
+  if (!name || !email || !msg) { alert('Please fill in all required fields.'); return; }
+  const mailto = `mailto:rehanulislam00@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Contact')}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${msg}`)}`;
+  window.open(mailto);
+  const notif = document.getElementById('notif');
+  notif.classList.add('show');
+  setTimeout(() => notif.classList.remove('show'), 3500);
+}
+</script>
+</body>
+</html>
