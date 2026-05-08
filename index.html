@@ -279,7 +279,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 48px
 <section id="hero">
   <div class="blobs"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
   <div class="hero-inner">
-    <div class="hero-badge"><span class="bdot"></span> Available for Opportunities</div>
+    <div class="hero-badge"><span class="bdot"></span> People Operations Executive · HR</div>
     <h1 class="hero-name">
       <span class="hn-first">Rehanul</span>
       <span class="hn-last">Islam</span>
@@ -438,41 +438,35 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 48px
   </div>
 </section>
 
-<!-- RESUME -->
-<section id="resume" style="background:var(--bg2)">
-  <div class="container">
-    <div class="res-box fi">
-      <span class="res-em">📄</span>
-      <h3>Download My Resume</h3>
-      <p>Get a comprehensive overview of my experience, education, skills, and certifications in a clean, professional format.</p>
-      <a href="mailto:rehanulislam00@gmail.com?subject=Resume Request" class="btn-grad">📩 Request Resume</a>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="eyebrow fi" style="color:var(--c1)"><span style="width:8px;height:8px;background:var(--c1);border-radius:50%;display:inline-block"></span>Let's Connect</div>
     <h2 class="sec-title fi">Get In<br><span class="g2">Touch</span></h2>
     <div class="contact-grid">
-      <div class="fi">
-        <div class="contact-h">Open to Opportunities</div>
-        <p style="color:var(--soft);margin-bottom:28px;line-height:1.9">I'm currently open to new opportunities in HR operations, people management, and related roles. Whether you have a question, project, or just want to connect — feel free to reach out!</p>
-        <div class="ci"><div class="ci-ic ci1">📧</div><div class="ci-txt"><a href="mailto:rehanulislam00@gmail.com">rehanulislam00@gmail.com</a></div></div>
-        <div class="ci"><div class="ci-ic ci2">📱</div><div class="ci-txt"><button onclick="requestNumber()" style="background:linear-gradient(135deg,var(--c1),var(--c3));border:none;color:#fff;padding:8px 20px;border-radius:20px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;transition:opacity .2s" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">📲 Request Phone Number</button></div></div>
-        <div class="ci"><div class="ci-ic ci3">📍</div><div class="ci-txt">Amtola, Khilkhet, Dhaka 1229, Bangladesh</div></div>
-        <div class="ci"><div class="ci-ic ci4">💼</div><div class="ci-txt">Open to: On-site · Hybrid · Remote</div></div>
-        <div class="socials">
-          <a href="https://linkedin.com/in/rehanulislam00" target="_blank" class="soc soc-li"><span>in</span> LinkedIn</a>
-          <a href="mailto:rehanulislam00@gmail.com" class="soc soc-em">✉ Email Me</a>
-        </div>
-      </div>
+     <div class="fi">
+  <div class="contact-h">Let's Connect</div>
+
+  <p style="color:var(--soft);margin-bottom:28px;line-height:1.9">
+    For recruitment inquiries, collaborations, HR consultation, or professional networking,
+    please use the contact form. Your message will be sent directly to my inbox.
+  </p>
+
+  <div class="ci">
+    <div class="ci-ic ci3">📍</div>
+    <div class="ci-txt">Dhaka, Bangladesh</div>
+  </div>
+
+  <div class="socials">
+    <a href="https://linkedin.com/in/rehanulislam00" target="_blank" class="soc soc-li">
+      <span>in</span> LinkedIn
+    </a>
+  </div>
+</div>
       <div class="fi d1">
         <div class="cf">
           <div class="fg"><label>Your Name</label><input type="text" id="fName" placeholder="John Doe"/></div>
           <div class="fg"><label>Email Address</label><input type="email" id="fEmail" placeholder="john@example.com"/></div>
-          <div class="fg"><label>Subject</label><input type="text" id="fSubject" placeholder="Job Opportunity / Collaboration"/></div>
           <div class="fg"><label>Message</label><textarea id="fMsg" placeholder="Tell me about the opportunity..."></textarea></div>
           <button class="btn-grad" onclick="sendMsg()" style="border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem">✉ Send Message</button>
         </div>
@@ -569,21 +563,39 @@ function closeMobile(){document.getElementById('mobileMenu').classList.remove('o
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')}),{threshold:.08});
 document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
 
-// REQUEST PHONE NUMBER
-function requestNumber(){
-  window.open('mailto:rehanulislam00@gmail.com?subject=Phone Number Request&body=Hi Rehanul,%0A%0AI would like to request your phone number for further discussion.%0A%0AName: %0AOrganization: %0APurpose: ');
-  const nt=document.getElementById('notif');
-  nt.textContent='📲 Phone request sent via email!';
-  nt.classList.add('show');setTimeout(()=>nt.classList.remove('show'),3500);
-}
 
 // CONTACT
+<script>
 function sendMsg(){
-  const n=document.getElementById('fName').value,e=document.getElementById('fEmail').value,s=document.getElementById('fSubject').value,m=document.getElementById('fMsg').value;
-  if(!n||!e||!m){alert('Please fill in all required fields.');return}
-  window.open(`mailto:rehanulislam00@gmail.com?subject=${encodeURIComponent(s||'Portfolio Contact')}&body=${encodeURIComponent('Name: '+n+'\nEmail: '+e+'\n\n'+m)}`);
-  const nt=document.getElementById('notif');nt.classList.add('show');setTimeout(()=>nt.classList.remove('show'),3500);
+  const n=document.getElementById('fName').value;
+  const e=document.getElementById('fEmail').value;
+  const m=document.getElementById('fMsg').value;
+
+  if(!n || !e || !m){
+    alert('Please fill in all required fields.');
+    return;
+  }
+
+  const subject = encodeURIComponent("Portfolio Contact Message");
+
+  const body = encodeURIComponent(
+`New Portfolio Message
+
+Name: ${n}
+Email: ${e}
+
+Message:
+${m}`
+  );
+
+  window.location.href = `mailto:rehanul707@gmail.com?subject=${subject}&body=${body}`;
+
+  const nt=document.getElementById('notif');
+  nt.textContent='✅ Message prepared successfully!';
+  nt.classList.add('show');
+
+  setTimeout(()=>{
+    nt.classList.remove('show');
+  },3500);
 }
 </script>
-</body>
-</html>
